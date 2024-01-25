@@ -6,8 +6,20 @@
             </div>
             <div class="col text-end ">
                 <form class="m-0" action="./index.php" method="get">
-                    <input class=" form-control-sm " type="text" name="search">
-                    <button class=" form-control-sm " type="submit">Cerca</button>
+                <select class="form-select-sm" name="searchStar" style="width: 155px;">
+                        <option value="">Scegli le stelle</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <select class="form-select-sm" name="searchParking" style="width: 155px;">
+                        <option value="">Scegli parcheggio</option>
+                        <option value="true">Il parcheggio è incluso</option>
+                        <option value="false">Il parcheggio non è incluso</option>
+                    </select>
+                    <button class="form-control-sm " type="submit">Cerca</button>
                 </form>
             </div>
         </div>

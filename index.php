@@ -1,7 +1,16 @@
 <?php
     include __DIR__ . '/partials/var.php';
-    if (isset($_GET['search'])) {
-        $search = $_GET['search'];
+    $total_hotel = $hotels;
+    if (isset($_GET['searchStar'])) {
+        $searchStar = $_GET['searchStar'];
+
+        var_dump($searchStar);
+    }
+
+    if (isset($_GET['searchParking'])) {
+        $searchParking = $_GET['searchParking'];
+
+        var_dump($searchParking);
     }
 ?>
 
@@ -32,7 +41,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($hotels as $hotel) { ?>
+                    <?php foreach ($total_hotel as $hotel) { ?>
                         <tr>
                             <td><?php echo $hotel['name'] ?></td>
                             <td><?php echo $hotel['description'] ?></td>
