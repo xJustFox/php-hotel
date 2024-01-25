@@ -1,6 +1,8 @@
 <?php
-include __DIR__ . '/partials/var.php';
-
+    include __DIR__ . '/partials/var.php';
+    if (isset($_GET['search'])) {
+        $search = $_GET['search'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -15,8 +17,9 @@ include __DIR__ . '/partials/var.php';
 </head>
 
 <body>
+    <?php include __DIR__.'/components/header.php';?>
     <main>
-        <div class="container-lg">
+        <div class="container-lg py-5">
 
             <table class="table table-bordered border-primary text-center">
                 <thead>
@@ -33,9 +36,9 @@ include __DIR__ . '/partials/var.php';
                         <tr>
                             <td><?php echo $hotel['name'] ?></td>
                             <td><?php echo $hotel['description'] ?></td>
-                            <td><?php echo $hotel['vote'] ?></td>
-                            <td><?php echo $hotel['distance_to_center'] ?></td>
-                            <td><?php echo $hotel['parking']; ?></td>
+                            <td><?php echo $hotel['vote'].' stelle' ?></td>
+                            <td><?php echo $hotel['distance_to_center'].'m' ?></td>
+                            <td><?php echo $hotel['parking'] == true ? 'Il parcheggio è incluso' : 'Il parcheggio non è incluso'; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
@@ -43,6 +46,7 @@ include __DIR__ . '/partials/var.php';
             </table>
         </div>
     </main>
+    <?php include __DIR__.'/components/footer.php';?>
 </body>
 
 </html>
