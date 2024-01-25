@@ -4,7 +4,7 @@
             <div class="col">
                 <h1 class="m-0">HOTELS</h1>
             </div>
-            <div class="col text-end ">
+            <div class="col d-flex justify-content-end ">
                 <form class="m-0" action="./index.php" method="get">
                 <select class="form-select-sm" name="searchStar" style="width: 155px;">
                         <option value="">Scegli le stelle</option>
@@ -20,6 +20,9 @@
                         <option value="false">Il parcheggio non è incluso</option>
                     </select>
                     <button class="form-control-sm " type="submit">Cerca</button>
+                </form>
+                <form class="m-0" action="./index.php" method="get">
+                    <button class="form-control-sm mx-1" type="submit">Ripristina</button>
                 </form>
             </div>
         </div>

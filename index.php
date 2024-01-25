@@ -1,16 +1,29 @@
 <?php
     include __DIR__ . '/partials/var.php';
     $total_hotel = $hotels;
-    if (isset($_GET['searchStar'])) {
-        $searchStar = $_GET['searchStar'];
 
-        var_dump($searchStar);
+    if (isset($_GET['searchStar']) && $_GET['searchStar'] != '' && $_GET['searchParking'] == '') {
+        $temp_hotel = [];
+
+        foreach ($total_hotel as $hotel) {
+            if ($hotel['vote'] == $_GET['searchStar']) {
+                $temp_hotel [] = $hotel;
+            }
+        }
+
+        $total_hotel = $temp_hotel;
     }
 
-    if (isset($_GET['searchParking'])) {
-        $searchParking = $_GET['searchParking'];
+    if (isset($_GET['searchParking']) && $_GET['searchParking'] != '' && $_GET['searchStar'] == '' ) {
+        $temp_hotel = [];
 
-        var_dump($searchParking);
+        foreach ($total_hotel as $hotel) {
+            if ($hotel['parking'] == filter_var($_GET['searchParking'], FILTER_VALIDATE_BOOLEAN) ) {
+                $temp_hotel [] = $hotel;
+            }
+        }
+
+        $total_hotel = $temp_hotel;
     }
 ?>
 
