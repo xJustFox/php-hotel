@@ -6,7 +6,7 @@
         $temp_hotel = [];
 
         foreach ($total_hotel as $hotel) {
-            if ($hotel['vote'] == $_GET['searchStar']) {
+            if ($hotel['vote'] >= $_GET['searchStar']) {
                 $temp_hotel [] = $hotel;
             }
         }
